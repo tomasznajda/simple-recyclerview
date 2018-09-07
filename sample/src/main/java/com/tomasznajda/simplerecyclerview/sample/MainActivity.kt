@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnBasic.onClickStartActivity(BasicExampleActivity::class)
+        btnAdvanced.onClickStartActivity(AdvancedExampleActivity::class)
     }
 
     private fun <ActivityT : Activity> Button.onClickStartActivity(activityClass: KClass<ActivityT>) =

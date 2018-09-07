@@ -9,7 +9,7 @@
     <TextView
             android:id="@+id/ad"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="80dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="32dp"
@@ -26,6 +26,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintDimensionRatio="h,1:1"/>
+            />
 
 </android.support.constraint.ConstraintLayout>
