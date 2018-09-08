@@ -1,4 +1,5 @@
 # Simple RecyclerView
+[![CircleCI](https://circleci.com/gh/tomasznajda/simple-recyclerview.svg?style=svg)](https://circleci.com/gh/tomasznajda/simple-recyclerview)\
 This library is created to simplify usage of RecyclerView with multiple ViewHolders.
 
 ## Usage
