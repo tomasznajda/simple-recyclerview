@@ -1,6 +1,13 @@
 # Simple RecyclerView
-[![CircleCI](https://circleci.com/gh/tomasznajda/simple-recyclerview.svg?style=svg)](https://circleci.com/gh/tomasznajda/simple-recyclerview)\
-This library is created to simplify usage of RecyclerView with multiple ViewHolders.
+[ ![Download](https://api.bintray.com/packages/tomasznajda/simple-recyclerview/simple-recyclerview/images/download.svg?version=1.0.0) ](https://bintray.com/tomasznajda/simple-recyclerview/simple-recyclerview/1.0.0/link) [![CircleCI](https://circleci.com/gh/tomasznajda/simple-recyclerview.svg?style=svg)](https://circleci.com/gh/tomasznajda/simple-recyclerview)\
+This library is created to simplify usage of the RecyclerView with multiple ViewHolders.
+
+## Dependency
+```groovy
+dependencies {
+    compile 'com.tomasznajda.simplerecyclerview:simplerecyclerview:1.0.0'
+}
+```
 
 ## Usage
 
