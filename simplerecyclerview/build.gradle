@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+version = '1.0.0'
+group = 'com.tomasznajda.simplerecyclerview'
 
 android {
     compileSdkVersion 27
@@ -7,7 +12,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0.0"
+        versionName version
     }
     buildTypes {
         release {
@@ -19,8 +24,86 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support:recyclerview-v7:$supportVersion"
     testImplementation 'junit:junit:4.12'
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.tomasznajda.simplerecyclerview'
+                artifactId 'simplerecyclerview'
+
+                name 'simple-recyclerview'
+                description 'Simplifies usage of the RecyclerView with multiple ViewHolders'
+                url 'https://github.com/tomasznajda/simple-recyclerview'
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'tomasznajda'
+                        name 'Tomasz Najda'
+                        email 'hello@tomasznajda.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/tomasznajda/simple-recyclerview.git'
+                    developerConnection 'https://github.com/tomasznajda/simple-recyclerview.git'
+                    url 'https://github.com/tomasznajda/simple-recyclerview'
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    excludes = ['**/*.kt']
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+    if (project.rootProject.file('local.properties').exists()) {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        user = properties.getProperty("bintray.user")
+        key = properties.getProperty("bintray.apikey")
+
+        configurations = ['archives']
+        override = true
+        pkg {
+            repo = 'simple-recyclerview'
+            name = 'simple-recyclerview'
+            desc = 'Simplifies usage of the RecyclerView with multiple ViewHolders'
+            websiteUrl = 'https://github.com/tomasznajda/simple-recyclerview'
+            vcsUrl = 'https://github.com/tomasznajda/simple-recyclerview.git'
+            licenses = ["Apache-2.0"]
+            publish = true
+        }
+    }
 }
