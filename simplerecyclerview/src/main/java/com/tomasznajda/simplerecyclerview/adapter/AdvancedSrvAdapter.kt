@@ -8,6 +8,9 @@ import com.tomasznajda.simplerecyclerview.util.replace
 
 class AdvancedSrvAdapter : BaseSrvAdapter() {
 
+    val items: List<Any>
+        get() = displayedItems
+
     fun <ItemT : Any> set(items: List<ItemT>) {
         displayedItems = items
         notifyDataSetChanged()
