@@ -49,4 +49,19 @@ class AdvancedSrvAdapter : BaseSrvAdapter() {
         notifyItemChanged(position)
     }
 
+    fun <ItemT : Any> replaceAll(item: ItemT, predicate: (Any) -> Boolean) {
+        displayedItems.forEachIndexed { index, displayedItem ->
+            if (predicate(displayedItem)) replace(item, index)
+        }
+    }
+
+    fun <ItemT : Any> replaceFirst(item: ItemT, predicate: (Any) -> Boolean) {
+        val index = displayedItems.indexOfFirst { predicate(it) }
+        if (index != -1) replace(item, index)
+    }
+
+    fun <ItemT : Any> replaceLast(item: ItemT, predicate: (Any) -> Boolean) {
+        val index = displayedItems.indexOfLast { predicate(it) }
+        if (index != -1) replace(item, index)
+    }
 }
