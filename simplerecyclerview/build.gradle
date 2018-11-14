@@ -7,10 +7,10 @@ version = '1.1.0'
 group = 'com.tomasznajda.simplerecyclerview'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName version
     }
