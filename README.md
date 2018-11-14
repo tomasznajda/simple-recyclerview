@@ -1,11 +1,11 @@
 # Simple RecyclerView
-[![Download](https://api.bintray.com/packages/tomasznajda/simple-recyclerview/simple-recyclerview/images/download.svg?version=1.1.0) ](https://bintray.com/tomasznajda/simple-recyclerview/simple-recyclerview/1.1.0/link) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleRecyclerView-green.svg?style=flat)](https://android-arsenal.com/details/1/7111) [![CircleCI](https://circleci.com/gh/tomasznajda/simple-recyclerview.svg?style=svg)](https://circleci.com/gh/tomasznajda/simple-recyclerview)\
+[![Download](https://api.bintray.com/packages/tomasznajda/simple-recyclerview/simple-recyclerview/images/download.svg?version=1.1.1) ](https://bintray.com/tomasznajda/simple-recyclerview/simple-recyclerview/1.1.1/link) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleRecyclerView-green.svg?style=flat)](https://android-arsenal.com/details/1/7111) [![CircleCI](https://circleci.com/gh/tomasznajda/simple-recyclerview.svg?style=svg)](https://circleci.com/gh/tomasznajda/simple-recyclerview)\
 This library is created to simplify usage of the RecyclerView with multiple ViewHolders.
 
 ## Dependency
 ```groovy
 dependencies {
-    implementation "com.tomasznajda.simplerecyclerview:simplerecyclerview:1.1.0"
+    implementation "com.tomasznajda.simplerecyclerview:simplerecyclerview:1.1.1"
 }
 ```
 
